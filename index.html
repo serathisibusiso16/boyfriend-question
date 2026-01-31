@@ -1,118 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>One Important Question 💕</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      max-width: 320px;
-    }
-
-    h1 {
-      margin-bottom: 25px;
-    }
-
-    button {
-      padding: 12px 22px;
-      font-size: 16px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      margin: 10px;
-    }
-
-    #yes {
-      background-color: #ff4d6d;
-      color: white;
-    }
-
-    #no {
-      background-color: #ccc;
-      position: absolute;
-    }
-
-    /* Celebration section */
-    #celebrate {
-      display: none;
-      text-align: center;
-    }
-
-    #celebrate img {
-      width: 220px;
-      border-radius: 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-
-    /* Heart beat animation */
-    .heart {
-      font-size: 48px;
-      animation: beat 1s infinite;
-    }
-
-    @keyframes beat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.2); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    .emojis {
-      font-size: 32px;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Will You Be My Boyfriend? 💕</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+  }
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 320px;
+  }
+  h1 { margin-bottom: 25px; }
+  button {
+    padding: 12px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  #yes { background-color: #ff4d6d; color: white; }
+  #no { background-color: #ccc; position: absolute; transition: left 0.2s, top 0.2s; }
+  #celebrate { display: none; text-align: center; }
+  #celebrate img {
+    width: 220px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+  .heart { font-size: 48px; animation: beat 1s infinite; }
+  @keyframes beat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  .emojis { font-size: 32px; margin-top: 10px; }
+  #whatsappLink {
+    text-decoration: none;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="card" id="questionCard">
-    <h1>Will you be my boyfriend? 💕</h1>
-    <button id="yes">Yes 💖</button>
-    <button id="no">No 🙄</button>
-  </div>
+<div class="card" id="questionCard">
+  <h1>Will you be my boyfriend? 💕</h1>
+  <button id="yes">Yes 💖</button>
+  <button id="no">No 🙄</button>
+</div>
 
-  <div id="celebrate">
-    <img src="f31fca2c-4430-4090-bb2b-4ddb9e56e173.jpeg" alt="Us 💕">
-    <div class="heart">❤️</div>
-    <div class="emojis">👨‍❤️‍💋‍👨 😍</div>
-  </div>
+<div id="celebrate">
+  <img src="f31fca2c-4430-4090-bb2b-4ddb9e56e173.jpeg" alt="Us 💕">
+  <div class="heart">❤️</div>
+  <div class="emojis">👨‍❤️‍💋‍👨 😍</div>
 
-  <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const card = document.getElementById("questionCard");
-    const celebrate = document.getElementById("celebrate");
+  <!-- WhatsApp button -->
+  <a id="whatsappLink" 
+     href="https://wa.me/27732089301?text=Hi%20I%20want%20to%20say%20Yes%20💖" 
+     target="_blank">
+     Send me a message on WhatsApp 💌
+  </a>
+</div>
 
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    });
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const card = document.getElementById("questionCard");
+  const celebrate = document.getElementById("celebrate");
 
-    yesBtn.addEventListener("click", () => {
-      card.style.display = "none";
-      celebrate.style.display = "block";
-    });
-  </script>
+  // Moving "No" button
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  yesBtn.addEventListener("click", () => {
+    card.style.display = "none";
+    celebrate.style.display = "block";
+  });
+</script>
 
 </body>
 </html>
