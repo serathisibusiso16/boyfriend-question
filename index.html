@@ -33,7 +33,11 @@
   }
   #yes { background-color: #ff4d6d; color: white; }
   #no { background-color: #ccc; position: absolute; transition: left 0.2s, top 0.2s; }
-  #celebrate { display: none; text-align: center; }
+  #celebrate {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+  }
   #celebrate img {
     width: 220px;
     border-radius: 20px;
@@ -88,7 +92,7 @@
   const card = document.getElementById("questionCard");
   const celebrate = document.getElementById("celebrate");
 
-  // Moving "No" button
+  // "No" button moves away
   noBtn.addEventListener("mouseover", () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -96,9 +100,10 @@
     noBtn.style.top = y + "px";
   });
 
+  // Show celebration & WhatsApp link after clicking "Yes"
   yesBtn.addEventListener("click", () => {
     card.style.display = "none";
-    celebrate.style.display = "block";
+    celebrate.style.display = "block"; // this shows everything inside celebrate including WhatsApp
   });
 </script>
 
